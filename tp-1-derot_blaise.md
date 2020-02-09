@@ -9,11 +9,11 @@
 >Pour rechercher un terme lors d'une recherche sur le manuel on peut, une fois sur la page du manuel en entrant "/" suivi du terme voulu pour mettre en surbrillance les termes recherchés. ex :/filenames"
 
 
-3.Comment quitte-t-on le manuel?
+3. Comment quitte-t-on le manuel?
 >On quitte le manuel en appuyant sur q.
 
-4.Chaque sectiondu manuel a une première page, qui présente le contenu de la section. Aﬀicher lapremière page de la section 6; de quoi parle cette section?
->
+4. Chaque sectiondu manuel a une première page, qui présente le contenu de la section. Aﬀicher lapremière page de la section 6; de quoi parle cette section?
+>Cete section parle de jeux et programmes qu'il y a dans le système, on y accède via la commande "man 6 intro"
 
 ### Navigation dans l’arborescence des fichiers
 
@@ -119,10 +119,10 @@
 >On utilise "cut -c1" pour afficher uniquement la 1ere colonne et "sort -r" pour trier par ordre alphabetique inverse. On execute alors "cut -c1 /etc/passwd | sort -r" pour afficher la première colinne triée par ordre alphabétique inverse. 
 
 18. Quelle commande nous donne le nombre d’utilisateurs ayant un compte sur cette machine (pas seule-ment les utilisateurs connectés)?
-> La commande donnant le nombre d'utilisateurs ayant un compte est "who -q "
+> La commande donnant le nombre d'utilisateurs ayant un compte est "wc -l /etc/passwd "
 
 19. Combien de pages de manuel comportent le mot-clé conversion dans leur description?
-> 
+> On utilise la commande "man -k conversion" et on trouve que 4 pages de manuel contionnent ce mot clé
 
 20. A l’aide de la commande find, recherchez tous les fichiers se nommant passwd présents sur la machine
 > On utilise la commande find /-name "passwd" pour rechercher tous les fichiers se nommant 
@@ -131,13 +131,13 @@
 > On execute "find / -name passwd > ~/list_passwd_files.txt" pour enregistrer les fichiers trouvés vers le fichier list_passwd_files et "find / -name passwd 2>> /dev/null" pour rediriger les erreurs vers /dev/null.
 
 22. Dans votre dossier personnel, utilisez la commande grep pour chercher où est défini l’alias ll vu précédemment
->
+> On execute "grep -ll", on obtient que ll est défini dans grep [OPTION] ... PATTERNS[FILE]
 
-23. Utilisez la commandelocatepour trouver le fichierhistory.log.
->
+23. Utilisez la commande locate pour trouver le fichier history.log.
+>Tout d'abord on installe la commande locate avec la commande "apt install mlocate", puis on recherche le fichier voulu avec "locate history.log" : on trouve que le chemin vers ce fichier est /var/log/apt/history.log
 
 24. Créer un fichier dans votre dossier personnel puis utilisez locate pour le trouver. Apparaît-il? Pourquoi?
->
+>En créant un fichier dans notre espace personnel et en le recherchant avec la commande locate, il n'apparait pas dans les résulats de la recherche.
 
 
 ## Exercice 4. Personnalisation du shell
